@@ -26,12 +26,12 @@ def documents_view(request):
 @csrf_exempt
 def documents_view(request, pk):
     if request.method == 'GET':
-        documents_dto = vl.get_documents(pk)
+        documents_dto = vl.get_document(pk)
         documents = serializers.serialize('json', [documents_dto,])
         return HttpResponse(documents, 'application/json')
 
     if request.method == 'PUT':
-        documents_dto = vl.update_documents(pk, json.loads(request.body))
+        documents_dto = vl.update_document(pk, json.loads(request.body))
         documents = serializers.serialize('json', [documents_dto,])
         return HttpResponse(documents, 'application/json')
 
