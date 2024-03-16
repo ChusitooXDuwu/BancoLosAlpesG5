@@ -10,7 +10,7 @@ def documents_view(request):
     if request.method == 'GET':
         id = request.GET.get("id", None)
         if id:
-            documents_dto = vl.get_documents(id)
+            documents_dto = vl.get_document(id)
             documents = serializers.serialize('json', [documents_dto,])
             return HttpResponse(documents, 'application/json')
         else:
@@ -24,7 +24,7 @@ def documents_view(request):
         return HttpResponse(documents, 'application/json')
 
 @csrf_exempt
-def documents_view(request, pk):
+def document_view(request, pk):
     if request.method == 'GET':
         documents_dto = vl.get_document(pk)
         documents = serializers.serialize('json', [documents_dto,])
