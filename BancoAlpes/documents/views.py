@@ -1,6 +1,6 @@
 import os
 
-from BancoAlpes.documents.forms import DocumentForm
+from .forms import DocumentForm
 from .logic import logic_documents as vl
 from django.http import FileResponse, HttpResponse, HttpResponseRedirect
 from django.core import serializers
