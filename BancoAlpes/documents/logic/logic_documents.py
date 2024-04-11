@@ -7,3 +7,8 @@ def get_document(document_pk):
 def get_documents():
     documents = Documento.objects.all()
     return documents
+
+def create_document(form):
+    document = form.save()
+    document.save()
+    return ()
