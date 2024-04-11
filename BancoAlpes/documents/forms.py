@@ -10,7 +10,7 @@ class DocumentForm(forms.ModelForm):
             'tipo',
             'estado',
             'archivo',
-            'score confiabilidad',
+            'score_confiabilidad',
         ]
 
         labels = {
