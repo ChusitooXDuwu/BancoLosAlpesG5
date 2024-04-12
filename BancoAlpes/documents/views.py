@@ -56,7 +56,7 @@ def document_create(request):
             create_document(form)
             messages.add_message(request, messages.SUCCESS, 'Document create successful')
             
-            return "docuemnto creado con exito"
+            return HttpResponseRedirect(reverse('documentCreate')) + '?status=success' 
         else:
             print(form.errors)
     else:
