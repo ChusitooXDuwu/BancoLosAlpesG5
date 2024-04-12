@@ -17,6 +17,6 @@ class DocumentForm(forms.ModelForm):
             'cliente' : 'Cliente',
             'tipo' : 'Tipo',
             'estado' : 'Estado',
-            'archivo' : 'Archivo',
+            'archivo' : 'archivo',
             'score_confiabilidad' : 'Score_Confiabilidad',
         }
