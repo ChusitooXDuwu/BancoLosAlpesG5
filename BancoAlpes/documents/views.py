@@ -66,4 +66,4 @@ def document_create(request):
         'form': form,
     }
 
-    return HttpResponse(documents, 'application/json')
+    return HttpResponse("we good")
