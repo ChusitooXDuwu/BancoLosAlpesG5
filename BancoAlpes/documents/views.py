@@ -72,6 +72,7 @@ def document_create(request):
 @csrf_exempt
 def documents_deleteAll(request):
     if request.method == 'DELETE':
+        print('deleting all documents')
         delete_all_documents()
         return HttpResponse("All documents deleted", 'application/json')
     else:
