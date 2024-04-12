@@ -12,3 +12,7 @@ def create_document(form):
     document = form.save()
     document.save()
     return ("wiiiii creadoooooo")
+
+def delete_all_documents():
+    Documento.objects.all().delete()
+    return ("wiiiii eliminadoooos")

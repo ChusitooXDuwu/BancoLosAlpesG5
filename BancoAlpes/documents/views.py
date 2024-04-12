@@ -9,6 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 from django.urls import reverse
 from .logic.logic_documents import create_document
+from .logic.logic_documents import delete_all_documents
 from django.contrib import messages
 
 @csrf_exempt
@@ -67,3 +68,11 @@ def document_create(request):
     }
 
     return HttpResponse("el form no es correcto, revisar entradas o infromacion enviada")
+
+@csrf_exempt
+def documents_deleteAll(request):
+    if request.method == 'DELETE':
+        delete_all_documents()
+        return HttpResponse("All documents deleted", 'application/json')
+    else:
+        return HttpResponse("Method not allowed", 'application/json')
