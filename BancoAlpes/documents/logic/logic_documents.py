@@ -11,4 +11,4 @@ def get_documents():
 def create_document(form):
     document = form.save()
     document.save()
-    return ()
+    return ("wiiiii creadoooooo")
