@@ -65,4 +65,4 @@ def document_create(request):
         'form': form,
     }
 
-    return HttpResponse("we good")
+    return HttpResponse("el form no es correcto, revisar entradas o infromacion enviada")
