@@ -47,7 +47,7 @@ def pdf_view(request):
     
 
    
- 
+@csrf_exempt
 def document_create(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST)
