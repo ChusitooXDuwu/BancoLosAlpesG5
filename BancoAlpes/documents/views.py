@@ -50,8 +50,7 @@ def pdf_view(request):
 @csrf_exempt
 def document_create(request):
     if request.method == 'POST':
-        documents_dto = vl.create_document(json.loads(request.body))
-        documents = serializers.serialize('json', [documents_dto,])
+        
         form = DocumentForm(request.POST)
         if form.is_valid():
             create_document(form)
