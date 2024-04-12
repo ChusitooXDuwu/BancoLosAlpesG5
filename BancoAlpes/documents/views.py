@@ -64,4 +64,4 @@ def document_create(request):
         'form': form,
     }
 
-    return "se ha creado un documento exitosamente"
+    return render(request, 'Document/documentCreate.html', context)
