@@ -9,7 +9,7 @@ class Documento(models.Model):
     
     fecha_subida = models.DateTimeField(auto_now_add=True)
     estado = models.CharField(max_length=50)   #si ya fue confirmado o no *******ASR*****
-    archivo = models.FileField(upload_to='docsClientes/')
+    archivo = models.CharField(max_length=50)
     score_confiabilidad = models.FloatField(default=0.0)  #score ese importante para analisis debe ser x un api hay que mockearlo
     
 
