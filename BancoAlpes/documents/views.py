@@ -77,3 +77,12 @@ def documents_deleteAll(request):
         return HttpResponse("All documents deleted", 'application/json')
     else:
         return HttpResponse("Method not allowed", 'application/json')
+    
+@csrf_exempt
+def docCreate(request):
+    if request.method == 'POST':
+        doc_dto = vl.create_doc(json.loads(request.body))
+        doc = serializers.serialize('json', [doc_dto,])
+        return HttpResponse(doc, 'application/json')
+    else:
+        return HttpResponse("Method not allowed", 'application/json')

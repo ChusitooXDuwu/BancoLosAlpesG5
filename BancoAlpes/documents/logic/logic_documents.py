@@ -10,9 +10,21 @@ def get_documents():
 
 def create_document(form):
     document = form.save()
+    'now close the document'
+
     document.save()
+
     return ("wiiiii creadoooooo")
 
 def delete_all_documents():
     Documento.objects.all().delete()
     return ("wiiiii eliminadoooos")
+
+def create_doc(data):
+    document = Documento(
+        title=data['title'],
+        description=data['description'],
+        file=data['file']
+    )
+    document.save()
+    return document
