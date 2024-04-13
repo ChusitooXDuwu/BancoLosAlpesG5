@@ -21,6 +21,7 @@ def delete_all_documents():
     return ("wiiiii eliminadoooos")
 
 def create_doc(data):
+    print(data)
     document = Documento(
         cliente=data['cliente'],
         tipo=data['tipo'],
