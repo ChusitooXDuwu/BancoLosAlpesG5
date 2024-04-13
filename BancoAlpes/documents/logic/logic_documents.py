@@ -22,9 +22,11 @@ def delete_all_documents():
 
 def create_doc(data):
     document = Documento(
-        title=data['title'],
-        description=data['description'],
-        file=data['file']
+        cliente=data['cliente'],
+        tipo=data['tipo'],
+        estado=data['estado'],
+        score_confiabilidad=data['score_confiabilidad'],
+        archivo=data['archivo']
     )
     document.save()
     return document
