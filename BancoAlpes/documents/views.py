@@ -53,13 +53,17 @@ def document_create(request):
     if request.method == 'POST':
         
         form = DocumentForm(request.POST)
-        if form.is_valid():
-            create_document(form)
-            messages.add_message(request, messages.SUCCESS, 'Document create successful')
-            print("Document create successful")
-            return HttpResponseRedirect(reverse('documentCreate')) 
-        else:
-            print(form.errors)
+        create_document(form)
+        messages.add_message(request, messages.SUCCESS, 'Document create successful')
+        print("Document create successful")
+        return HttpResponseRedirect(reverse('documentCreate')) 
+        # if form.is_valid():
+        #     create_document(form)
+        #     messages.add_message(request, messages.SUCCESS, 'Document create successful')
+        #     print("Document create successful")
+        #     return HttpResponseRedirect(reverse('documentCreate')) 
+        # else:
+        #     print(form.errors)
     else:
         form = DocumentForm()
 
