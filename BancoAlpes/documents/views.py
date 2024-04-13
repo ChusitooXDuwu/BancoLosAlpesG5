@@ -81,6 +81,8 @@ def documents_deleteAll(request):
 @csrf_exempt
 def docCreate(request):
     if request.method == 'POST':
+        print("creating document")
+        print(request.body)
         doc_dto = vl.create_doc(json.loads(request.body))
         doc = serializers.serialize('json', [doc_dto,])
         return HttpResponse(doc, 'application/json')
